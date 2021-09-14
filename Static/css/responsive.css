@@ -1,0 +1,80 @@
+@media screen and (max-width: 720px){
+	#header{
+	padding:50px 0 50px;
+	}
+	.header-content{
+		padding: 210px 0;
+		text-align: center;
+	}
+	.header-content h1{
+	font-size: 30px;
+	}
+	.header-content h2{
+		font-size: 25px;
+	}
+	.search {
+		width: 90%;
+	}
+	.search input{
+    width: 80%;
+	}
+	#myProgress {
+ 		width: 90%;
+	}
+
+	#about{
+	padding: 50px 0 50px;
+	}
+	.about h2{
+	font-size: 30px;
+	}
+	.about-img{
+	width: 100%;
+	margin-top: 10px;
+	}
+	.box-left{
+	height: 35px;
+	width: 35px;
+	border-radius: 50%;
+	}
+	.box-left h3{
+	font-size: 16px;
+	}
+
+
+	#page-title h1{
+		font-family: 'Oswald', sans-serif;
+		font-size: 30px;
+	}
+	#information{
+	padding:40px 0 50px
+	}
+	.reload a{
+	margin-top: 0px!important;
+	}
+	#info-button {
+
+	padding: 40px 0 10px;
+	}
+	#info-button ul li a {
+	padding: 5px;
+	font-size: 14px;
+	margin-right: 5px;
+	width: 30%;
+	border-radius: 1px;
+	margin-top: 20px;
+	}
+	.t-img a {
+		margin-top: -5px!important;
+		background: #fff!important;
+	}
+	.t-img a img {
+		width: 50%;
+	}
+	
+
+		
+	
+
+
+}

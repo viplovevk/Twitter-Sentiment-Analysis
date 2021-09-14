@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    table, th, td
+	{
+		border: 1px solid black;
+		width: 70%;
+		padding: 5px 10px;
+	}
+  </style>
+	<title>Twitter Sentiment Analysis</title>
+	<!-- Main Style Sheet -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}" />
+	<!-- Bootstrap -->
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+									
+  	<!-- google Font  -->
+  			<!-- Poppins-->
+  	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  		<!-- Oswald -->
+  	<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+  	<!-- Font awesome -->
+	<script src="https://kit.fontawesome.com/6ff322857f.js" crossorigin="anonymous"></script>
+</head>
+<body style="width: 90%; margin: auto;">
+
+<section id="page-title">
+  <div class="container">
+      <h1>Twitter Sentiment Analysis</h1>
+  </div>
+</section>
+
+
+<!-- info-button-start -->
+<section id="info-button">
+  <div class="container">
+      <ul>
+        <li><a href="/home" title="Go Home"><image src="{{url_for('static',filename = 'bird.png')}}"; width="96px"; height="96px"></a></li>
+        <li><a href="/barchart">View Barchart</a></li>
+        <li><a href="/tweets">View Tweets</a></li>
+        <li><a href="/wordCloud">View Word Cloud</a></li>
+        <li><a href="/worldMap" onclick="loader(50)">View World Map</a></li>
+        <li class="reload"><a href="/reload" onclick="loader(50)">Reload</a></li>
+      </ul>
+      <br/>
+      <br/>
+      <br/>
+  </div>
+
+  <div id="myProgress" style="display:none; border: rgb(88, 79, 79);">
+    <div id="myBar"></div>
+    <p style="text-align: center;">Processing</p>
+  </div>
+</section>
+
+<div id="myProgress" style="display: none;">
+  <div id="myBar"></div>
+</div>
+
+<div style="text-align: center;">
+	<img src = "{{ image }}"/>
+</div>
+
+<br/>
+<br/>
+
+<p>
+    <div id = "help-div" style="text-align: center;"> <!-- information section -->
+        <span style="font-weight:bold">
+        What is going on?
+        </span>
+        <blockquote>
+        <b> Pie Chart. </b> It shows the percentages of the four core sentiments the given keyword
+        is stoking. The slices are demarcated and percentage share displayed
+        </blockquote>
+
+<script>
+  function loader(seconds){
+    let atPercent = 0;
+    var elem = document.getElementById("myProgress");
+    elem.style.display = "block";
+    const bar = document.getElementById("myBar")
+    const interval = setInterval(() => {
+      bar.style.width = atPercent + '%';
+      atPercent++;
+      console.log('clicked')
+      if (atPercent == 100) {
+        clearInterval(interval)
+      }
+    }, (seconds * 1000)/100)
+  }
+</script>         
+
+<!-- jquary-cdn-link -->
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

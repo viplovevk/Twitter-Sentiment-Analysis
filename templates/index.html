@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Twitter Sentiment Analysis</title>
+	<!-- Main Style Sheet -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+	<!-- Bootstrap -->
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+									
+  	<!-- google Font  -->
+  			<!-- Poppins-->
+  	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  		<!-- Oswald -->
+  	<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+  	<!-- Font awesome -->
+	<script src="https://kit.fontawesome.com/6ff322857f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- *******header-part-satrt****** -->
+<section id="header home " data-vide-bg="{{url_for('static', filename='images/video.mp4')}}" type="video/mp4">
+	<div class="container">
+		<div class="header-content ">
+			<h2 class="wow bounceInUp" data-wow-delay=".2s"">Welcome To </h2>
+			<h1 class="wow bounceInUp" data-wow-delay=".5s"">Twitter Sentiment Analysis</h1>
+			<div class="search wow bounceInUp" data-wow-delay=".6s"">
+				<form action="/predict" method="POST">
+					<input type="text" name="TestTweet" placeholder="Enter Keyword" required="required" />
+					<button type="submit" class="serach-btn"  onclick="loader(35);"><i class="fas fa-search"></i></button>
+				</form>
+			</div>
+			<div id="myProgress" style="display: none;">
+				<div id="myBar"></div>
+				<p>Loading and Processing Tweets</p>
+			</div>
+			<br>
+			 
+
+
+		</div>
+	</div><!-- end container -->
+</section><!-- end header -->
+	<!-- *******header-part-end****** -->
+
+
+
+
+	<!-- jquary-cdn-link -->
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+	<!-- video pluging -->
+	<script src="{{url_for('static', filename='js/jquery.vide.js')}}"></script>
+	<script>
+		function loader(seconds){
+			let atPercent = 0;
+			var elem = document.getElementById("myProgress");
+			elem.style.display = "block";
+			const bar = document.getElementById("myBar")
+			const interval = setInterval(() => {
+				bar.style.width = atPercent + '%';
+				if (atPercent < 100){
+					atPercent++;
+				}
+				console.log('clicked')
+				if (atPercent == 100) {
+					x.innerHTML = "Tweets loaded from spark & processing. . .";
+					clearInterval(interval)
+				}
+			}, (seconds * 1000)/100)
+		}
+	</script> 
+
+
+	<!-- main.js -->
+	<script src="js/main.js"></script>
+</body>
+</html>

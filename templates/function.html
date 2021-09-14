@@ -1,0 +1,66 @@
+<html>
+<head>
+<title> Function </title>
+<style>
+.loading-bar{
+	margin: auto;
+	padding: 10px;
+	width: 300px;
+	height: 30px;
+	margin: '40px';
+	background-color: gray;
+	display: none;
+}
+
+.loading{
+	background-color: green;
+	height: 100%;
+	width: 300px;
+}
+
+	
+input[type=submit]
+	{
+		background-color: #7395AE;
+		border: 1;
+		border-color: black;
+		border-radius: 5px;
+		color: black;
+		padding: 5px 10px;
+		cursor: pointer;
+	}
+
+
+</style>
+
+</head>
+
+<body>
+	<script>
+		function loader(seconds){
+			let atPercent = 0;
+			var x = document.querySelector(".loading-bar");
+			x.style.display = "block";
+			const bar = document.querySelector('.loading')
+			const interval = setInterval(() => {
+				bar.style.width = atPercent + '%';
+				atPercent++;
+				console.log('clicked')
+				if (atPercent == 100) {
+					x.innerHTML = "Tweets loaded from spark & processing. . .";
+					clearInterval(interval)
+				}
+			}, (seconds * 1000)/100)
+		}
+	</script> 
+
+<div>
+    <form>
+      <label for="TestTweet">Search:</label>
+      <input type="text" name="TestTweet" placeholder="Enter Keyword" required="required" size="40" />
+      <input type="submit" onclick="loader(33)" value="Query">
+    </form>
+  </div>
+
+</body>
+</html>
