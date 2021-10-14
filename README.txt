@@ -27,3 +27,9 @@ model.save("model.h5")
 and data_tokenizer.joblib file into the working directory for steps above
 
 -input in HTML form needs to be transformed into the tokenized vector before feeding into the loaded DL model
+
+This project was done in collaboration with:
+Keith Lim
+Sophie Huang
+Alishan Anwar
+Bryan Koh
