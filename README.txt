@@ -27,11 +27,3 @@ model.save("model.h5")
 and data_tokenizer.joblib file into the working directory for steps above
 
 -input in HTML form needs to be transformed into the tokenized vector before feeding into the loaded DL model
-
-Things to do:
--index.html and predict.html can be modified to to a more presentable state
--Modify above program to display list of tweets and sentiment instead of one
--This list is then to be converted into some format acceptable by Tableau for visualization
--Find out how Tableau is able to generate graphics from CSV files (also how the account at Tableau works)
-
-https://www.kaggle.com/kazanova/sentiment140
